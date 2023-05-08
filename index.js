@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
 
+const PORT = process.env.PORT || 3000;
+
 // Routes
 const userRoutes = require('./routes/userRoutes');
 
@@ -26,4 +28,8 @@ app.get('/hello', (req, res) => {
 
 app.use('/api/users', userRoutes);
 
-module.exports = app;
+// module.exports = app;
+
+app.listen(PORT, () => {
+	console.log(`Server is listening on port ${PORT}`);
+});
