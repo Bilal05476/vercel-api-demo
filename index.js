@@ -2,6 +2,9 @@ const express = require('express')();
 const bodyParser = require('body-parser');
 const connectDB = require('./config/db');
 
+// Routes
+const userRoutes = require('./routes/userRoutes');
+
 require('dotenv').config();
 connectDB();
 
@@ -18,5 +21,7 @@ app.get('/', (req, res) => {
 app.get('/hello', (req, res) => {
 	res.end('Hello from the hello route');
 });
+
+app.use('/api/users', userRoutes);
 
 module.exports = app;
