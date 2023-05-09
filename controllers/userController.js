@@ -1,6 +1,6 @@
-const User = require('../models/User');
+import User from '../models/User';
 
-async function get(req, res, next) {
+export async function get(req, res, next) {
 	try {
 		const users = await User.find();
 		res.status(200).json(users);
@@ -8,5 +8,3 @@ async function get(req, res, next) {
 		res.status(500).json({ message: err.message });
 	}
 }
-
-module.exports = { get };

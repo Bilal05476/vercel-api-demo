@@ -1,15 +1,13 @@
-const express = require('express')();
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const connectDB = require('./config/db');
-
-const PORT = process.env.PORT || 3000;
+import express from 'express';
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
+import connectDB from './config/db.js';
+import dotenv from 'dotenv';
+dotenv.config();
+connectDB();
 
 // Routes
 const userRoutes = require('./routes/userRoutes');
-
-require('dotenv').config();
-connectDB();
 
 const app = express;
 
@@ -28,8 +26,4 @@ app.get('/hello', (req, res) => {
 
 app.use('/api/users', userRoutes);
 
-// module.exports = app;
-
-app.listen(PORT, () => {
-	console.log(`Server is listening on port ${PORT}`);
-});
+export default app;
