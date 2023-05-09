@@ -3,11 +3,12 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import { connectDB } from './config/db.js';
 import dotenv from 'dotenv';
-dotenv.config();
-connectDB();
 
 // Routes
-const userRoutes = require('./routes/userRoutes');
+import userRoutes from './routes/userRoutes.js';
+
+dotenv.config();
+connectDB();
 
 const app = express;
 
