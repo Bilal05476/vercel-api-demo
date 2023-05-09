@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
-import connectDB from './config/db.js';
+import { connectDB } from './config/db.js';
 import dotenv from 'dotenv';
 dotenv.config();
 connectDB();
