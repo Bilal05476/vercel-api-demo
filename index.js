@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import { connectDB } from './config/db.js';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 // Routes
 import userRoutes from './routes/userRoutes.js';
@@ -15,6 +16,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors());
 
 app.get('/', (req, res) => {
 	res.status(200).json({ message: 'Hello World' });
