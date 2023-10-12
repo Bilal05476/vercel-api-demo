@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
-import { connectDB } from './config/db.js';
+//import { connectDB } from './config/db.js';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
@@ -9,7 +9,7 @@ import cors from 'cors';
 import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
-connectDB();
+//connectDB();
 
 const app = express();
 
